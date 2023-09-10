@@ -1,0 +1,61 @@
+---
+- name: install dependencies
+  become: yes
+  apt:
+    update_cache: yes
+    state: present
+    name:
+      - at
+      - bc
+      - cmake
+      - ffmpeg
+      - gmic
+      - gnuradio
+      - gr-osmosdr
+      - imagemagick
+      - jq
+      - libatlas-base-dev
+      - libgfortran5
+      - libjpeg9
+      - libjpeg9-dev
+      - libncurses5-dev
+      - libncursesw5-dev
+      - libsox-fmt-mp3
+      - libusb-1.0-0
+      - libusb-1.0-0-dev
+      - libxft-dev
+      - libxft2
+      - predict
+      - python3-pip
+      - python-setuptools
+      - socat
+      - sox
+      - sqlite3
+      - certbot
+
+- name: install wkhtmltox (wkhtmltoimg)
+  become: yes
+  apt:
+    deb: https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.raspberrypi.buster_armhf.deb
+    state: present
+
+- name: install wxtoimg
+  become: yes
+  apt:
+    deb: "{{ noaa_home }}/software/wxtoimg-armhf-2.11.2-beta.deb"
+    state: present
+    update_cache: no
+
+- name: install MeteorDemod
+  become: yes
+  apt:
+    deb: https://github.com/Digitelektro/MeteorDemod/releases/download/2.5.6-beta/meteordemod_2.5.6_armhf.deb
+    state: present
+
+- name: install SatDump
+  become: yes
+  apt:
+    deb: "{{ noaa_home }}/software/satdump_1.1.0_armhf.deb"
+    state: present
+    update_cache: no
+...
