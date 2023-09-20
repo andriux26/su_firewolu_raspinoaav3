@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+
+<style>
+body {
+  background-image: url('1.jpg');
+}
+</style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -30,18 +36,96 @@
           <li class="nav-item {% if page == 'captures' or page == 'capture'  %} active {% endif %}">
             <a class="nav-link" href="/captures?page_no=1">{{ lang['captures'] }}</a>
           </li>
+           
+          
+
+           <li class="nav-item {% if page == 'HDD' or page == 'HDD'  %} active {% endif %}">
+            <a class="nav-link" href="hdd.php">{{ lang['hdd'] }}</a>
+          </li>
+
+
+
+
+
           <li class="nav-item {% if page == 'admin' %} active {% endif %}">
             <a class="nav-link" href="/admin/passes">{{ lang['admin'] }}</a>
           </li>
         </ul>
-        <span class="navbar-text timezone">
-          <em>
-            {{ constant('Config\\Config::TIMEZONE') }}<br>
-            (UTC{{ 'now'|date('P') }})
-          </em>
-        </span>
-      </div>
+        </div>
     </header>
+<style>
+body {
+  background-image: url('1.jpg');
+}
+</style>
+
+
+
+
+<div style="display: flex; justify-content: center;">
+  <div style="margin-right: 10px;">
+    <img src="https://www.heavens-above.com/orbitdisplay.aspx?icon=default&width=200&height=100&mode=M&satid=57166" alt="Paveikslëlis" />
+    <div class="image-info">
+      <p><center>Meteor M2</center> </p>
+    </div>
+  </div>
+
+  <div style="margin-right: 10px;">
+    <img src="https://www.heavens-above.com/orbitdisplay.aspx?icon=default&width=200&height=100&mode=M&satid=25338" alt="Paveikslëlis" />
+    <div class="image-info">
+      <p><center>Noaa 15</center></p>
+    </div>
+  </div>
+
+  <div style="margin-right: 10px;">
+    <img src="https://www.heavens-above.com/orbitdisplay.aspx?icon=default&width=200&height=100&mode=M&satid=28654" alt="Paveikslëlis" />
+    <div class="image-info">
+      <p><center>Noaa 18</center></p>
+    </div>
+  </div>
+
+  <div style="margin-right: 10px;">
+    <img src="https://www.heavens-above.com/orbitdisplay.aspx?icon=default&width=200&height=100&mode=M&satid=33591" alt="Paveikslëlis" />
+    <div class="image-info">
+      <p><center>Noaa 19</center></p>
+    </div>
+  </div>
+
+  <div style="margin-right: 10px;">
+    <img src="https://www.heavens-above.com/orbitdisplay.aspx?icon=iss&width=200&height=100&mode=M&satid=25544" alt="Paveikslëlis" />
+    <div class="image-info">
+      <p><center>Iss</center></p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <div class="container">
       {% block pre_body %}
       {% endblock %}
@@ -52,7 +136,7 @@
 
     <footer class="footer text-center">
       <div class="container">
-        <a href="https://github.com/jekhokie/raspberry-noaa-v2"><img class="img-footer" src="/assets/web_img/logo-small-v2.png" alt="logo"></a>
+
       </div>
     </footer>
 

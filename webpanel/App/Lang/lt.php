@@ -23,9 +23,12 @@ return array(
   "pass_start_azimuth" => "Azimutas",
   "passes" => "Laikai",
   "prev" => "Atgal",
+  "m2" => "M2-3 Dazniai",
+  "hdd" => "M2-HDD",
   "satellite" => "Palidovai",
   "successful_delete_capture" => "Istrinta",
   "successful_delete_pass" => "Istrinta",
   "travel_direction" => "Kryptis",
+  "Log" => "Log",
 );
 ?>

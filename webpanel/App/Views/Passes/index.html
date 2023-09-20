@@ -5,11 +5,11 @@
 {% endblock %}
 
 {% block pre_body %}
-<center><font color="black"><h1><strong><font face="Times New Roman" size="6">NOAA APT and Meteor LRPT Weather Satellite Receiver</font></strong></h1></font></center>
+  <br><center><h1><strong></strong></h1></center><br>
   <div id="instruments" class="flex-container">
     {% if constant('Config\\Config::ENABLE_SATVIS') == 'true' %}
       <div id="satvis" class="d-none d-sm-block flex-child">
-        <iframe name="satvis" src="https://satvis.space/?elements=Point,Label,SensorCone&layers=ArcGis&terrain=ArcGis&gs={{ constant('Config\\Config::BASE_STATION_LAT') }},{{ constant('Config\\Config::BASE_STATION_LON') }}&tags=Weather"></iframe>
+        <iframe name="satvis" src="https://satvis.space/?elements=Point,Label,SensorCone&layers=ArcGis&terrain=Maptiler&gs={{ constant('Config\\Config::BASE_STATION_LAT') }},{{ constant('Config\\Config::BASE_STATION_LON') }}&tags=Weather"></iframe>
       </div>
     {% endif %}
 
@@ -23,10 +23,7 @@
 
 {% block body %}
 <center>
-      <meta http-equiv="refresh" content="300" url="https://www.timeanddate.com/scripts/sunmap.php">
-      <img src="https://www.timeanddate.com/scripts/sunmap.php?iso=&amp;earth=1" width="100%" height="100%">
-      <meta img="sunmap.php" src-equiv="refresh" content="300">
-    </center>
+          </center>
   <table class="table table-bordered table-sm table-striped" id="passes">
     <thead class="thead-dark">
       <tr class="text-center">
@@ -65,7 +62,7 @@
             <td{% if prev_pass_end >= pass.pass_start %} class="conflict"{% endif %}>
               {% if prev_pass_end >= pass.pass_start %}<i class="fa fa-exclamation-triangle conflict-icon" data-toggle="tooltip" data-placement="right" title="{{ lang['conflicting_pass'] }}"></i>{% endif %}
               {% if constant('Config\\Config::ENABLE_SATVIS') == 'true' %}
-                <a href='https://satvis.space/?elements=Point,Label,SensorCone&layers=ArcGis&terrain=ArcGis&tags=Weather&sat={{ pass.sat_name }}&gs={{ constant('Config\\Config::BASE_STATION_LAT') }},{{ constant('Config\\Config::BASE_STATION_LON') }}' target='satvis'>{{ pass.sat_name }}</a>
+                <a href='https://satvis.space/?elements=Point,Label,SensorCone&layers=ArcGis&terrain=Maptiler&tags=Weather&sat={{ pass.sat_name }}&gs={{ constant('Config\\Config::BASE_STATION_LAT') }},{{ constant('Config\\Config::BASE_STATION_LON') }}' target='satvis'>{{ pass.sat_name }}</a>
               {% else %}
                 {{ pass.sat_name }}
               {% endif %}
@@ -89,11 +86,7 @@
   </table>
 
   <br>
-  <center><font color="black"><h4><strong><font face="Times New Roman" size="6">Coronal Mass Ejection Activity</font></strong></h4></font>
-  <img src="https://sohowww.nascom.nasa.gov/data/LATEST/current_c2.gif" height=300 style="margin-right=2em; margin-bottom:2em;">
-  <img src="https://sohowww.nascom.nasa.gov/data/LATEST/current_c3.gif" height=300 style="margin-right=2em; margin-bottom:2em;">
-  <img src="https://stereo.gsfc.nasa.gov/beacon/latest_512/ahead_cor2_latest.jpg" height=300 style="margin-right=2em; margin-bottom:2em;"></center>
-
+ 
 {% endblock %}
 
 {% block js_includes %}

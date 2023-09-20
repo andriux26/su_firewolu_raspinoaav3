@@ -7,8 +7,7 @@
 {% block body %}
 
  <div>
-         <p align="right"> Enhancement details <a href="../enhancement_details.html" target="_blank">information</a></p>
- </div>
+          </div>
 
   {% set col_count = 0 %}
   {% set i = 0 %}
@@ -25,14 +24,14 @@
       </a>
       <div class="card-body">
         <p class="card-text">
-          <strong>{{ lang.enhancement }}: </strong>{{ enhancement|trim('-', side='left')|split('.')|slice(0,-1)|join }}<br>
-          <strong>{{ lang.gain }}: </strong>
+        <center>  <strong>{{ lang.enhancement }}: </strong>{{ enhancement|trim('-', side='left')|split('.')|slice(0,-1)|join }}<br>
+          <strong></strong>
             {% if capture.gain == '0' %}
               Auto
             {% elseif capture.gain == '' %}
               Unknown
             {% else %}
-              {{ capture.gain }}
+          </center>
             {% endif %}
         </p>
       </div>
